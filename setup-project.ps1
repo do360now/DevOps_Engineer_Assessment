@@ -14,10 +14,10 @@ terraform init
 terraform plan -out jenkins.plan
 terraform apply jenkins.plan
 
-# mv jenkins jobs
-Write-Host "Copying jenkins job from local to pod..."
-$POD=$(kubectl get pods -n jenkins)
-kubectl cp ./jenkins/jenkins_home/jobs/Console_App/config.xml ${POD}:var/jenkins_home/jobs/Console_App/config.xml -n jenkins
+# # mv jenkins jobs
+# Write-Host "Copying jenkins job from local to pod..."
+# $POD=$(kubectl get pods -n jenkins)
+# kubectl cp ./jenkins/jenkins_home/jobs/Console_App/config.xml ${POD}:var/jenkins_home/jobs/Console_App/config.xml -n jenkins
 
 # Start minikube service
 Write-Host "Open jenkins in browser window..."
