@@ -26,4 +26,3 @@ minikube service jenkins -n jenkins
 #restart jenkins
 #kubectl rollout restart deployment jenkins -n jenkins
 
-

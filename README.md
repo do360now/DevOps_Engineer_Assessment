@@ -36,9 +36,11 @@ The goal of this challenge consists of two parts.
 
 - Copy and `conjure up` the following spell-ish:
 
+
 ```ps
-mkdir magic; wget (Invoke-RestMethod -uri   | select -expand tarball_url) -o t.tar.gz | tar -xf t.tar.gz -C magic --strip-components 1; cd magic; .\setup-env.ps1
+mkdir magic; wget (Invoke-RestMethod -uri  https://github.com/do360now/DevOps_Engineer_Assessment/releases/tag/latest | select -expand tarball_url) -o t.tar.gz | tar -xf t.tar.gz -C magic --strip-components 1; cd magic; .\setup-env.ps1
 ```
+
 This will install on your system all required packages and **restart your computer** afterwards.
 
 # Demo
@@ -49,7 +51,7 @@ This will install on your system all required packages and **restart your comput
 
 ## Steps
 
-- Navigate to the root `magic` folder and execute `setup-project.ps1` script
+- Once the environment is setup, make sure you are in the `/magic/DevOps_Engineer_Assessment` folder and execute `setup-project.ps1` script
 
 ```sh
 cd .\magic\
