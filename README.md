@@ -1,4 +1,5 @@
 # Devops Engineer Assessment
+<img src="https://github.com/do360now/devops_engineer_challenge/wizard.jpg" alt="magic" width="150">
 DevOps Engineer Assessment project Jenkins, Docker, Terraform, Kubernetes
 
 # Jump to content
@@ -44,7 +45,7 @@ This will install on your system all required packages and **restart your comput
 
 ## Initial assumptions
 
-- In order to demonstrate CICD Jenkins capabilities one pipeline job is created to build .NET Core app from github.
+- In order to demonstrate CICD Jenkins capabilities one pipeline job is created to build .NET Core app from github --> `https://github.com/do360now/JenkinsDocker`
 
 ## Steps
 
