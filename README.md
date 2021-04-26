@@ -1,5 +1,5 @@
 # Devops Engineer Assessment
-<img src="https://github.com/do360now/devops_engineer_challenge/wizard.jpg" alt="magic" width="150">
+<img src="https://github.com/do360now/DevOps_Engineer_Assessment/blob/main/wizard.jpg" alt="magic" width="150">
 DevOps Engineer Assessment project Jenkins, Docker, Terraform, Kubernetes
 
 # Jump to content
