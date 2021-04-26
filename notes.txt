@@ -1,0 +1,102 @@
+24/04/2021 - 
+### Sources
+--> https://www.jenkins.io/doc/book/installing/kubernetes/
+--> https://learn.hashicorp.com/tutorials/terraform/kubernetes-provider?in=terraform/use-case
+
+## Steps using yaml files:
+minikube start
+
+kubectl create namespace jenkins
+kubectl get namespaces
+kubectl config use-context jenkins
+
+kubectl apply -f jenkins-volume.yaml
+
+kubectl apply -f jenkins-sa.yaml
+
+kubectl create -f jenkins-deployment.yaml -n jenkins
+kubectl get deployments -n jenkins
+
+
+kubectl create -f jenkins-service.yaml -n jenkins
+kubectl get services -n jenkins
+minikube ip # will return an ip and along with the port we can access the server.  ( 192.168.49.2:31573 )
+minikube service -n jenkins jenkins
+
+## Get jenkins password
+kubectl get pods -n jenkins
+kubectl logs <pod_name> -n jenkins
+kubectl exec -it -n jenkins jenkins-585799558b-jzk6h -- /bin/bash # Connect to container in pod
+kubectl exec -it -n jenkins jenkins-9c7d9d7d6-dr2c7 -- /bin/bash
+
+
+## Steps using helm
+# Create cluster and namespace
+minikube start
+minikube status
+kubectl create namespace jenkins
+kubectl get namespaces
+
+# Install Jenkins with Helm v3
+helm repo add jenkinsci https://charts.jenkins.io
+helm repo update
+helm search repo jenkinsci  # The helm charts in the Jenkins repo can be listed with the command:
+
+# Create a persistent volume
+kubectl apply -f jenkins-volume.yaml
+
+# Create a service account
+kubectl apply -f jenkins-sa.yaml
+
+# Install Jenkins
+$chart=jenkinsci/jenkins # windows
+helm install jenkins -n jenkins -f jenkins-values.yaml $chart
+
+#Get jenkins password
+$jsonpath = "{.data.jenkins-admin-password}"
+$secret = $(kubectl get secret -n jenkins jenkins -o jsonpath=$jsonpath)
+echo $(echo $secret)
+Q3RpcWdtbnpXaVpLZ0t4NllNSEdOZw==
+
+# Get URL
+$jsonpath = "{.spec.ports[0].nodePort}"
+NODE_PORT=$(kubectl get -n jenkins -o jsonpath=$jsonpath services jenkins)
+
+
+
+
+
+
+helm install jenkins -n jenkins -f jenkins-values.yaml jenkinsci/jenkins
+NAME: jenkins
+LAST DEPLOYED: Fri Apr 23 17:11:19 2021
+NAMESPACE: jenkins
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Get your 'admin' user password by running:
+  kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo
+2. Get the Jenkins URL to visit by running these commands in the same shell:
+  echo http://127.0.0.1:8080
+  kubectl --namespace jenkins port-forward svc/jenkins 8080:8080
+
+3. Login with the password from step 1 and the username: admin
+4. Configure security realm and authorization strategy
+5. Use Jenkins Configuration as Code by specifying configScripts in your values.yaml file, see documentation: http:///configuration-as-code and examples: https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos
+
+For more information on running Jenkins on Kubernetes, visit:
+https://cloud.google.com/solutions/jenkins-on-container-engine
+
+For more information about Jenkins Configuration as Code, visit:
+https://jenkins.io/projects/jcasc/
+
+
+NOTE: Consider using a custom image with pre-installed plugins
+PS C:\Users\clmachad\Documents\DevOps\tests\gh\cicd-helm-jenkins>
+
+# jenkins image
+do360now/assessment.devops.images:jenkins_challenge
+
+To mount a directory from the host into the guest using the mount subcommand:
+
+minikube mount <source directory>:<target directory>
