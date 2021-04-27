@@ -62,8 +62,8 @@ Q3RpcWdtbnpXaVpLZ0t4NllNSEdOZw==
 $jsonpath = "{.spec.ports[0].nodePort}"
 NODE_PORT=$(kubectl get -n jenkins -o jsonpath=$jsonpath services jenkins)
 
-
-
+kubectl get services
+kubectl describe service <service-name>
 
 
 

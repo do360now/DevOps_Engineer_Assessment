@@ -30,7 +30,7 @@ The goal of this challenge consists of two parts.
 
 - `Powershell version => 5` console with `admin rights`
 
-## Steps
+## Step 1
 - Open the Powershell console as admin <br>
 `WIN key + X` and select `Windows Powershell (Admin)`
 
@@ -43,13 +43,8 @@ mkdir magic; wget (Invoke-RestMethod -uri  https://github.com/do360now/DevOps_En
 
 This will install on your system all required packages and **restart your computer** afterwards.
 
-# Demo
 
-## Initial assumptions
-
-- In order to demonstrate CICD Jenkins capabilities one pipeline job is created to build .NET Core app from github --> `https://github.com/do360now/JenkinsDocker`
-
-## Steps
+## Step 2
 
 - Once the environment is setup, make sure you are in the `/magic/DevOps_Engineer_Assessment` folder and execute `setup-project.ps1` script
 
