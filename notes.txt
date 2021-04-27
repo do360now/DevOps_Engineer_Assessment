@@ -98,5 +98,14 @@ PS C:\Users\clmachad\Documents\DevOps\tests\gh\cicd-helm-jenkins>
 do360now/assessment.devops.images:jenkins_challenge
 
 To mount a directory from the host into the guest using the mount subcommand:
-
 minikube mount <source directory>:<target directory>
+
+kubectl get services
+kubectl describe service kubernetes
+
+kubectl describe pod $POD_NAME
+
+kubectl get nodes -o wide 
+kubectl logs <pod name>
+
+kubectl create clusterrolebinding permissive-binding --clusterrole=cluster-admin --user=admin --user=kubelet --group=system:serviceaccounts
