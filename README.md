@@ -73,8 +73,6 @@ cd .\magic\
 # Cleanup
 - From your `magic` directory run `cleanup-project.ps1`
 
-- <h1> <strike>Happy</strike> Wizardly development </h1>
-
 # Caveats
 
 Because of all the `WIP` I currently have going,  I could not figure out in time how to get the jenkins kubernetes plugin working correctly. The build agent is orchestrated by Docker, but I will continue to look at this issue and try to make it work. 

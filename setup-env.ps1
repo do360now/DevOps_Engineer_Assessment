@@ -9,7 +9,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 $Packages = 'git',
             'docker-desktop',
             'wsl2', #docker desktop needs wsl2 linux kernel
-            'kubernetes-cli',
+            'kubernetes-cli --version=1.20.5',
             'minikube',
             'terraform',
  

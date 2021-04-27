@@ -12,9 +12,14 @@ terraform {
 
 
 provider "kubernetes" {
-  config_path    = "c://users//clmachad//.kube//config"
+  config_path    = "~//.kube//config"
   config_context = "minikube"
 }
+
+# provider "kubernetes" {
+#   config_path    = "c://users//clmachad//.kube//config"
+#   config_context = "minikube"
+# }
 
 ################################
 # Resources
