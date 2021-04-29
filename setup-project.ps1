@@ -19,6 +19,9 @@ terraform apply jenkins.plan
 # $POD=$(kubectl get pods -n jenkins)
 # kubectl cp ./jenkins/jenkins_home/jobs/Console_App/config.xml ${POD}:var/jenkins_home/jobs/Console_App/config.xml -n jenkins
 
+# Run cluster binding command
+kubectl create clusterrolebinding permissive-binding --clusterrole=cluster-admin --user=admin --user=kubelet --group=system:serviceaccounts
+
 # Start minikube service
 Write-Host "Open jenkins in browser window..."
 minikube service jenkins -n jenkins
