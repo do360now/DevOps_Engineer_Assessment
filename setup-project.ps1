@@ -3,7 +3,10 @@
 
 # Create minikube cluster
 Write-Host "Starting minikube..."
+minikube config set driver docker
+
 minikube start
+
 
 # #Start minikube
 # powershell wsl minikube start
