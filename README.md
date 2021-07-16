@@ -1,6 +1,6 @@
 # Devops Engineer Assessment
 <img src="https://github.com/do360now/DevOps_Engineer_Assessment/blob/main/wizard.jpg" alt="magic" width="150">
-DevOps Engineer Assessment project Jenkins, Docker, Terraform, Kubernetes
+DevOps Engineer Assessment using Terraform, Kubernetes, Docker, and Jenkins
 
 # Jump to content
 
@@ -16,8 +16,8 @@ DevOps Engineer Assessment project Jenkins, Docker, Terraform, Kubernetes
 # Installation steps
 
 The goal of this challenge consists of two parts.
-1. ```setup-env.ps1```: A script that will install all the tools needed for this challenge: Chocolatey, Docker, Terraform, Kubernetes, Minikube, Git and WSL
-2. ```setup-project.ps1```: A script that will create a cluster using minikube, a kubernetes deployment using terraform, a Jenkins with a predefined pipeline container and agent container. 
+1. ```setup-env.ps1```: A script that will install all the tools needed for this challenge: Chocolatey, Terraform, Kubernetes, Docker, Minikube, Git, and WSL2.
+2. ```setup-project.ps1```: A script that will create a cluster using minikube, a kubernetes deployment using terraform, a Jenkins with a predefined pipeline, running from a pod in a container and agents also running from the Kubernetes cluster, being deployed and managed by k8s. 
 
 ### How it works
 1. The ```setup-env.ps1``` script will first check if Chocolatey is installed, if it´s not installed, it will install it and continue the execution of the script. Will check if the rest of the tools are installed and, if not, will install it.
@@ -38,7 +38,7 @@ The goal of this challenge consists of two parts.
 
 
 ```ps
-mkdir magic; wget (Invoke-RestMethod -uri  https://github.com/do360now/DevOps_Engineer_Assessment/releases/tag/latest | select -expand tarball_url) -o t.tar.gz | tar -xf t.tar.gz -C magic --strip-components 1; cd magic; .\setup-env.ps1
+mkdir -force magic; cd magic; git clone https://github.com/do360now/DevOps_Engineer_Assessment.git; cd DevOps_Engineer_Assesment; .\setup-env.ps1
 ```
 
 This will install on your system all required packages and **restart your computer** afterwards.

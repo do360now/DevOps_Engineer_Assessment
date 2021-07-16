@@ -10,8 +10,8 @@ $Packages = 'git',
             'docker-desktop',
             'wsl2', #docker desktop needs wsl2 linux kernel
             'kubernetes-cli --version=1.20.5',
-            'minikube',
-            'terraform'
+            'minikube --version=1.22.0',
+            'terraform --version=1.0.2'
  
 If(Test-Path -Path "$env:ProgramData\Chocolatey") {
   ForEach ($PackageName in $Packages)
